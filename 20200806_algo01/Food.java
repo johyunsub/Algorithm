@@ -2,9 +2,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Food {
-	static int N, totalcnt=0, len;
+	static int N, totalcnt=0, len, min=99999;
 	static boolean[] isSel;
-	static int[] result;
 	static int[][] flav; 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -13,8 +12,6 @@ public class Food {
 		isSel = new boolean[N];			//뽑혔는지
 		flav = new int[N][2] ;			//입력받은 재료
 		len = (int) Math.pow(2, N)-1;	//재료조합의  경우의 수
-		result = new int[len];			
-		
 		
 		for(int t=0; t<N; t++) {
 			for(int j=0; j<2; j++) {
@@ -22,11 +19,8 @@ public class Food {
 			}
 		}
 		
-		
 		subset(0);
-		
-		Arrays.sort(result);	//오름차순으로 정렬
-		System.out.println(result[0]);	//가장작은 원소
+		System.out.println(min);	//가장작은 원소
 	}	
 	
 	
@@ -45,7 +39,12 @@ public class Food {
 					tmp2 += flav[i][1];
 				}
 			}
-			result[totalcnt++]  = Math.abs(tmp1-tmp2);
+			
+			//절대값의 최대값 찾기
+			if(min > Math.abs(tmp1-tmp2))
+				min = Math.abs(tmp1-tmp2);
+			totalcnt++;
+			
 			return;
 		}
 		
