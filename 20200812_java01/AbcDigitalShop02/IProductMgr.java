@@ -2,8 +2,6 @@ package AbcDigitalShop02;
 
 import java.util.ArrayList;
 
-import AbcDigitalShopSolution.DuplicateException;
-
 public interface IProductMgr {
 	public void add(Product prd) throws DuplicateException;	//상품정보 입력 기능
 	public void selectAll() throws ProductNotFoundException;	//상품정보 전체를 검색하는 기능
