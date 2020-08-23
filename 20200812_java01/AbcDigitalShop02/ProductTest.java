@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-import AbcDigitalShopSolution.DuplicateException;
 public class ProductTest {
 	
 	ProductMgrImpl pMgr = ProductMgrImpl.getInstance();
