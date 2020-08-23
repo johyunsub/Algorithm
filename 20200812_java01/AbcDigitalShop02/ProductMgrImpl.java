@@ -3,7 +3,6 @@ package AbcDigitalShop02;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import AbcDigitalShopSolution.DuplicateException;
 
 public class ProductMgrImpl implements IProductMgr {
 	ArrayList<Product> Products = new ArrayList<Product>();
@@ -141,7 +140,6 @@ public class ProductMgrImpl implements IProductMgr {
 				break;
 			}
 		}
-		System.out.println("상품가격 수정 완료!");
 	}
 	
 	//상품번호로 상품 삭제 기능 
@@ -156,7 +154,6 @@ public class ProductMgrImpl implements IProductMgr {
 				break;
 			}
 		}
-		System.out.println("상품삭제 완료!");
 	}
 	
 	//전체 재고 상품 금액 
