@@ -17,7 +17,7 @@ public class 스타트와링크 {
 			}
 		}
 		
-		combination(0,0);	//두팀으로 나눌 선수를 N/2명씩 뽑아야 하므로 조합 이용
+		combination(0,0);	//두팀으로 나눌 선수를 R명씩 뽑아야 하므로 조합 이용
 		System.out.println(min);
 	}
 	
