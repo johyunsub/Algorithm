@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원등록</title>
+<style>
+	.span1{
+		position:absolute;
+		top: 53px; left 53px;
+	}
+	.span2{
+		position:absolute;
+		top: 50px; left 50px;
+		color: orange;
+	}
+	header{
+		text-align: center;
+	}
+	form {
+		margin: 1em 10em;
+		text-align: center;
+	}
+	hr{
+		color: orange;
+	}
+	.legend{
+		color: green;	
+		text-align: left;
+	}
+	.fin{
+		text-align: center;
+	}
+	footer{
+		text-align: right;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<h2><span class="span1">Become a Member</span></h2>
+		<h2><span class="span2">Become a Member</span></h2>
+		<br><br><br>
+	</header>
+	<hr>
+	<form>
+		<div>
+			<fieldset>
+				<legend class="legend">Registration Information</legend>
+				<div>	
+						<label for="mail" >E-Mail:&nbsp;</label>
+						<input type="email" id="mail">
+				</div>
+				<div>
+						<label for="pass" >Password:&nbsp;</label>
+						<input type="text" placeholder="At least 6 letters or numbers">
+				</div>
+				<div>
+						<label for="vpass">Verify Password:&nbsp;</label>
+						<input type="text" id="vpass">
+				</div>
+			</fieldset>
+			
+		</div>
+		<div>
+			<fieldset>
+				<legend class="legend">Member Information</legend>
+				<div>
+						<label for="fname">First Name:&nbsp;</label>
+						<input type="search" id="fname" >
+				</div>
+				<div>
+						<label for="lname">Last Name:&nbsp;</label>
+						<input type="search" id="lname">
+				</div>
+				<div>
+						<label for="add">Address:&nbsp;</label>
+						<input type="text" id="add">
+				</div>
+				<div>
+						<label for="city">City:&nbsp;</label>
+						<input type="text" id="city">
+				</div>
+				<div>	
+						<label for="state">State:&nbsp;</label>
+						<input type="text" id="state" placeholder="2-charater code">
+				</div>
+				<div>
+						<label for="code">Zip Code:&nbsp;</label>
+						<input type="text" id="code" placeholder="5 or 9 digits">
+				</div>
+				<div>	
+						<label for="phone">Phone Number:&nbsp;</label>
+						<input type="tel" id="phone" placeholder="999-9999-9999">
+				</div>
+			</fieldset>
+			
+		</div>
+		<div>
+			<fieldset>
+				<legend class="legend">Membership Information</legend>
+				<div>
+						<label for="mship">Membership Type:&nbsp;</label>
+						<select name="mship" id="mship">
+						<option selected="selected">Junior</option>
+						<option>Senior</option>
+						<option>Master</option>
+						</select>
+				</div>
+				<div>
+						<label for="sdate">Starting Date:&nbsp;</label>
+						<input type="date" id="sdate" value="연도-월-일">
+				</div>
+				<div>
+						<label for="guest">Tickets for Guests:&nbsp;</label>
+						<input type="number" id="guest">
+				</div>
+			</fieldset>
+			
+		</div>
+		<div class="fin">
+			<fieldset>
+				<legend class="legend">Submit Your Membership</legend>
+				<input type="submit" value="Submit">
+				<input type="reset" value="Reset Fields">
+			</fieldset>
+			
+		</div>
+	</form>
+	<hr>
+	<footer>
+		<div>
+			<p>&copy; Copyright 2020 SSAFY</p>
+		</div>
+	</footer>
+</body>
+</html>
