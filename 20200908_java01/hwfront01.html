@@ -5,34 +5,91 @@
 <title>회원등록</title>
 <style>
 	.span1{
+		font-size: 150%;
 		position:absolute;
 		top: 53px; left 53px;
 	}
 	.span2{
+		font-size: 150%;
 		position:absolute;
 		top: 50px; left 50px;
 		color: orange;
 	}
 	header{
 		text-align: center;
+		margin-right: 20em;
+		margin-bottom: 2em;
 	}
 	form {
 		margin: 1em 10em;
 		text-align: center;
 	}
 	hr{
-		color: orange;
+		margin-left: 2em;
+		margin-right: 2em;
+		border: 1px solid orange;
 	}
 	.legend{
 		color: green;	
 		text-align: left;
 	}
+	.blank{
+		border: 2px solid red;
+	}
 	.fin{
 		text-align: center;
 	}
 	footer{
+		margin-right: 2em;
 		text-align: right;
 	}
+	#email{
+		margin-left: 2em;
+	}
+	#password{
+		margin-left: 0.6em;
+	}
+	#verify{
+		
+	}
+	#vpass{
+		margin-right: 2.8em;
+	}
+	#address{
+		margin-left: 1.2em;
+	}
+	#add{
+		border: 2px solid;
+		color: gray;
+	}
+	#city1{
+		margin-left: 3.2em;
+	}
+	#state1{
+		margin-left: 2.6em;
+	}
+	#zcode{
+		margin-left: 0.7em;
+	}
+	#phone{
+		margin-right: 2.4em;
+		border: 2px solid;
+		color: gray;
+	}
+	#mship{
+		margin-right: 11em;
+		border: 2px solid;
+		color: gray;
+	}
+	#sdate{
+		margin-right: 2.8em;
+	}
+	#guest{
+		margin-right: 3.6em;
+		border: 2px solid;
+		color: gray;
+	}
+	
 </style>
 </head>
 <body>
@@ -47,16 +104,16 @@
 			<fieldset>
 				<legend class="legend">Registration Information</legend>
 				<div>	
-						<label for="mail" >E-Mail:&nbsp;</label>
-						<input type="email" id="mail">
+						<label id="email" for="mail" >E-Mail:&nbsp;</label>
+						<input type="email" class="blank" id="mail">
 				</div>
 				<div>
-						<label for="pass" >Password:&nbsp;</label>
-						<input type="text" placeholder="At least 6 letters or numbers">
+						<label for="pass" id="password">Password:&nbsp;</label>
+						<input type="text" class="blank" placeholder="At least 6 letters or numbers">
 				</div>
 				<div>
-						<label for="vpass">Verify Password:&nbsp;</label>
-						<input type="text" id="vpass">
+						<label for="vpass" id="verify">Verify Password:&nbsp;</label>
+						<input type="text" class="blank" id="vpass">
 				</div>
 			</fieldset>
 			
@@ -66,27 +123,27 @@
 				<legend class="legend">Member Information</legend>
 				<div>
 						<label for="fname">First Name:&nbsp;</label>
-						<input type="search" id="fname" >
+						<input type="search" class="blank" id="fname" >
 				</div>
 				<div>
 						<label for="lname">Last Name:&nbsp;</label>
-						<input type="search" id="lname">
+						<input type="search" class="blank" id="lname">
 				</div>
 				<div>
-						<label for="add">Address:&nbsp;</label>
+						<label for="add" id="address">Address:&nbsp;</label>
 						<input type="text" id="add">
 				</div>
 				<div>
-						<label for="city">City:&nbsp;</label>
-						<input type="text" id="city">
+						<label for="city" id="city1">City:&nbsp;</label>
+						<input type="text" class="blank" id="city">
 				</div>
 				<div>	
-						<label for="state">State:&nbsp;</label>
-						<input type="text" id="state" placeholder="2-charater code">
+						<label for="state" id="state1">State:&nbsp;</label>
+						<input type="text" class="blank" id="state" placeholder="2-charater code">
 				</div>
 				<div>
-						<label for="code">Zip Code:&nbsp;</label>
-						<input type="text" id="code" placeholder="5 or 9 digits">
+						<label for="code" id="zcode">Zip Code:&nbsp;</label>
+						<input type="text" class="blank" id="code" placeholder="5 or 9 digits">
 				</div>
 				<div>	
 						<label for="phone">Phone Number:&nbsp;</label>
@@ -108,7 +165,7 @@
 				</div>
 				<div>
 						<label for="sdate">Starting Date:&nbsp;</label>
-						<input type="date" id="sdate" value="연도-월-일">
+						<input type="date" class="blank" id="sdate" value="연도-월-일">
 				</div>
 				<div>
 						<label for="guest">Tickets for Guests:&nbsp;</label>
