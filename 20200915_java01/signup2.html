@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sign up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!-- 전체 컨테이너 -->
+<div class="container">	
+	<div class="btn_box">
+		<ul class="m-0 p-0"><!-- 마진이 0, 패딩이 0 -->
+			<li class="float-right" style="list-style-type:none"><a class="p-1 text-danger" href="#">SignUp</a></li><!-- SignUp링크 오른쪽에 배치, 리스트dot표시 x, 글씨 빨간색 -->
+			<li class="float-right" style="list-style-type:none"><a class="p-1 text-danger" href="#">
+				<span id="spanForLogin" data-toggle="modal" data-target="#loginModal">Login</span>
+			</a></li>
+			<li class="float-right" style="list-style-type:none"><a class="p-1" href="#"><span id="spanForID" style="display: none;"></span>
+				<span id="spanForLogout" style="display: none;">Logout</span></a></li>
+		</ul>
+	</div>
+	<div class="jumbotron text-center my-1"><!-- 점보트론은 테두리가 둘근 큰 컨테이너를 만들때 사용 (jumbotron-fluid는 둥근테두리x) -->
+		<h2>행복한 우리집</h2>      
+	</div>
+	<!-- nav start -->
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark rounded"><!-- small사이즈의 폭은 끝까지의 navbar, 배경은 검정, 모서리는 둥글게 -->
+		
+		<ul class="navbar-nav"><!-- 네비게이션바의 nav -->
+      		<li class="nav-item"><!-- 네비게이션바의 nav의 item -->
+    		    <a class="nav-link" href="#">Home</a><!-- item의 링크 -->
+   		  	</li>
+    		<li class="nav-item">
+     		   <a class="nav-link dropdown-toggle" href="#">동네 정보</a>
+     		</li>
+    		<li class="nav-item">
+     		   <a class="nav-link" href="#">Notice</a>
+    		</li>    
+   		   	<li class="nav-item">
+    		    <a class="nav-link" href="#">News</a>
+   		   	</li>
+	     	<li class="nav-item">
+	     	   <a class="nav-link" href="#">Contact</a>
+	    	</li>
+	      	<li class="nav-item">
+	       		<a class="nav-link dropdown-toggle" href="#">live5</a>
+	      	</li>
+	      	<li class="nav-item">
+	        	<a class="nav-link dropdown-toggle" href="#">GuestBook</a>
+	      	</li>
+    	</ul>
+	</nav><!-- nav end -->
+	
+	<!-- login modal start -->
+	<div class="modal" id="loginModal"><!-- 로그인버튼 클릭시 생성되는 모달 -->
+		<div class="modal-dialog modal-md" style="vertical-align: middle;"><!-- md사이즈의 모달창, 창생성 위치 가운데 -->
+			<div class="modal-content">
+				<!-- ModalHeader -->
+				<div class="modal-header">
+					<h4 class="modal-title">LogIn</h4>
+					<button type="button" class="close dataDismiss" data-dismiss="modal">&times;</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="mbr_id">ID:</label>
+						<input type="text" id="mbr_id" class="form-control" placeholder="Enter ID">
+					</div>
+					<div class="form-group">
+						<label for="mbr_pwd">Password:</label>
+						<input type="password" id="mbr_pwd" class="form-control" placeholder="Enter Password">
+					</div>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" id="modalLogInBtn" class="btn btn-primary" data-dismiss="modal">LogIn</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div><!-- login modal end -->
+	
+	<!-- ======= Breadcrumbs ======= -->
+	<div>
+		<div class="container">	<!-- 내부 컨테이터 상하로 2마진 만큼 띄움 -->
+			<div class="my-2 ">
+				<h2>Join Member</h2>
+			</div>
+		</div>
+	</div><!-- End Breadcrumbs -->
+	
+	<!-- section start -->
+	<section id="index_section">
+		<div class="card col-sm-12 mt-1" style="min-height: 450px;">
+			<div class="card-body">
+				<form id="join_form" name="join_form" method="post"><!-- 입력을 받는 양식 -->
+					<label for="mbr_id_register"><strong>User ID (* 20자 이내) <span id="id_chk_res"></span></strong></label><!-- id라벨; 20자 이상일 경우 id_chk_res에 경고 표시 -->
+					<input type="text" id="mbr_id_register" name="mbr_id_register" class="form-control mb-3" placeholder="ID" maxlength="20" required="required" /><!-- form-control형식을 가지고 있고 아래방향을 3 마진 만큼 띄움 -->
+				
+					<label for="mbr_pwd_register"><strong>User Password (* 20자 이내) <span id="pwd_chk_res" class="text-danger"></span></strong></label>
+					<input type="password" id="mbr_pwd_register" name="mbr_pwd_register" class="form-control mb-3" placeholder="Password" maxlength="20" required="required" />
+				
+					<label for="mbr_pwd_register_re"><strong>User Password Confirm (* 20자 이내)</span></strong></label>
+					<input type="password" id="mbr_pwd_register_re" name="mbr_pwd_register_re" class="form-control mb-3" placeholder="Password" maxlength="20" required="required" />
+				
+					<label for="mbr_nm"><strong>User Name (* 10자 이내) <span id="nm_chk_res" class="text-danger"></span></strong></label>
+					<input type="text" id="mbr_nm" name="mbr_nm" class="form-control mb-3" placeholder="Name" maxlength="10" required="required" />
+				
+					<label for="mbr_tel"><strong>User CellPhone (* 20자 이내) <span id="tel_chk_res" class="text-danger"></span></strong></label>
+					<input type="text" id="mbr_tel" name="mbr_tel" class="form-control mb-3" placeholder="01055557777" maxlength="20" required="required" />
+				
+					<label for="mbr_email"><strong>User E-mail (* 50자 이내) <span id="email_chk_res" class="text-danger"></span></strong></label>
+					<input type="text" id="mbr_email" name="mbr_email" class="form-control mb-3" placeholder="example@example.com" maxlength="50" required="required" />
+				
+					<label for="mbr_addr1"><strong>User Address (*)</strong></label>
+					<input type="text" id="mbr_addr1" name="mbr_addr1" class="form-control mb-3" readonly="readonly" placeholder="Click!" required="required" />
+				
+					<label for="mbr_addr2"><strong>User Address 2 (50자 이내)</strong></label>
+					<input type="text" id="mbr_addr2" name="mbr_addr2" class="form-control mb-3" placeholder="주소 상세" maxlength="50" />
+				
+					<button type="button" id="join_btn" class="btn btn-primary btn-block">JOIN IN</button>
+				</form>
+			</div>
+		</div>
+	</section><!-- section end -->
+	
+	<footer class="col-ms-12 bg-dark rounded mt-1"></footer><!-- footer -->
+</div>
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>//다음 우편번호 검색 api
+	$(document).ready(function(){
+	    $("#mbr_addr1").click(function(){//daum address
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                 $("#mbr_addr1").val(data.address);
+	            }//oncomplete
+	        }).open();
+	    });//click
+
+	});//ready
+</script>
+</body>
+</html>
