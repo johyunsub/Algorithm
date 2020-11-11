@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      h3 {
+        text-align: center;
+      }
+      td {
+        text-align: center;
+      }
+      th {
+        border: 1px solid darkgray;
+        padding: 6px;
+        width: 200px;
+        text-align: center;
+        background: darkblue;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <h3>사원목록</h3>
+      <table id="list">
+        <thead>
+          <tr>
+            <th>사원 아이디</th>
+            <th>사원명</th>
+            <th>부서</th>
+            <th>직책</th>
+            <th>연봉</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="c in boards" >
+            <td>{{ c.no }}</td>
+            <td>{{ c.name }}</td>
+            <td>{{ c.dept }}</td>
+            <td>{{ c.pos }}</td>
+            <td>{{ c.sal }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr><br><br>
+      <table id="list1">
+        <thead>
+          <tr>
+            <th>사원 아이디</th>
+            <th>사원명</th>
+            <th>부서</th>
+            <th>직책</th>
+            <th>연봉</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="c in boards" v-if="c.no == no">
+            <td>{{ c.no }}</td>
+            <td>{{ c.name }}</td>
+            <td>{{ c.dept }}</td>
+            <td>{{ c.pos }}</td>
+            <td>{{ c.sal }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+
+    <script>
+      const boards = [
+        {
+        no: '1',
+          name: '조현섭',
+          dept: '개발부',
+          pos: '사장',
+          sal: '60000',
+        },
+        {
+          no: '2',
+          name: '송원준',
+          dept: '쁘이부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '3',
+          name: '조석준',
+          dept: '수냄부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '4',
+          name: '김태진',
+          dept: '꼰대부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '5',
+          name: '김두상',
+          dept: '기만부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '6',
+          name: '김우진',
+          dept: '회계부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '7',
+          name: '조현철',
+          dept: '집사부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '8',
+          name: '윤예준',
+          dept: '링핏부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '9',
+          name: '조준형',
+          dept: '황금부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '10',
+          name: '김동걸',
+          dept: '보쌈부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '11',
+          name: '장민호',
+          dept: '요가부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '12',
+          name: '김동준',
+          dept: '알고부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '13',
+          name: '이현준',
+          dept: '선도부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '14',
+          name: '안동규',
+          dept: '은닉부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '15',
+          name: '구소현',
+          dept: '재능부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '16',
+          name: '구민진',
+          dept: '민트부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '17',
+          name: '조희은',
+          dept: '보충부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '18',
+          name: '지승윤',
+          dept: '디피부',
+          pos: '사원',
+          sal: '30000',
+        },
+        {
+          no: '19',
+          name: '윤준오',
+          dept: '보충부',
+          pos: '사원',
+          sal: '30000',
+        },
+      ];
+      const params = new URL(document.location).searchParams;
+      const no = params.get('no');
+      
+      new Vue({
+        el: '#app',
+        data: {
+          no: no,
+          boards,
+        },
+      });
+    </script>
+  </body>
+</html>
