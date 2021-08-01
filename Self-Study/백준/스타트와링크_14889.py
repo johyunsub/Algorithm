@@ -1,55 +1,40 @@
-n = int(input())
-grp = [list(map(int, input().split())) for _ in range(n)]
-indexs = range(n)
-res = []
-v = [False]*n
-min_ = 9999999
-sta, lin = 0, 0
-    
+import itertools
+
+
 def combi(cnt, depth, v, N, R):
     global min_
     if cnt == R:
-        if v[0]:
-            min_ = min(min_, teams(v, N))
+        min_ = min(min_, cal_score(v, N))
     for i in range(depth, N):
         if v[i]:
             continue
         v[i] = True
-        combi(cnt + 1, i+1, v, N, R)
+        combi(cnt + 1, i + 1, v, N, R)
         v[i] = False
 
-def perm(t, output, cnt, v, N, R, f):
-    global sta, lin
-    if cnt == R:
-        if f:
-            sta += grp[output[0]][output[1]]
-        else:
-            lin += grp[output[0]][output[1]]
-    for i in range(N):
-        if v[i]:
-          continue
-        v[i] = True
-        perm(t, output + [t[i]], cnt + 1, v, N, R, f)
-        v[i] = False
 
-def teams(v, N):
-    global sta, lin
+def cal_score(v, N):
     start_ = []
     link_ = []
-    visit = [False]*N
-    output = []
     for i in range(N):
         if v[i]:
             start_.append(i)
         else:
             link_.append(i)
-    sta, lin = 0, 0
-    perm(start_, output, 0, visit, N//2, 2, True)
-    perm(link_, output, 0, visit, N//2, 2, False)
-    return abs(sta - lin)
+    start_score = 0
+    link_score = 0
+    for t in itertools.permutations(start_, 2):
+        start_score += grp[t[0]][t[1]]
+    for t in itertools.permutations(link_, 2):
+        link_score += grp[t[0]][t[1]]
+    return abs(start_score - link_score)
 
 
-
-combi(0, 0, v, n, n/2)
+n = int(input())
+grp = [list(map(int, input().split())) for _ in range(n)]
+indexs = range(n)
+res = []
+v = [False] * n
+min_ = 9999999
+combi(0, 1, v, n, n / 2)
 print(min_)
-
