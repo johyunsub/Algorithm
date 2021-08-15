@@ -19,15 +19,9 @@ def rotate_gears(g, d):     # 돌려야 할 각 톱니바퀴들을 bfs로 탐색
 
 def spin_one_gear(g, d):    # 톱니바퀴 회전
     if d == 1:
-        tmp = gear[g][7]
-        for i in range(7, 0, -1):
-            gear[g][i] = gear[g][i - 1]
-        gear[g][0] = tmp
+        gear[g] = [gear[g][-1]] + gear[g][0:-1]
     else:
-        tmp = gear[g][0]
-        for i in range(7):
-            gear[g][i] = gear[g][i + 1]
-        gear[g][7] = tmp
+        gear[g] = gear[g][1::] + [gear[g][0]]
 
 
 gear = [list(map(int, list(input()))) for _ in range(4)]
