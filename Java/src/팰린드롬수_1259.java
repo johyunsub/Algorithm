@@ -18,15 +18,14 @@ public class 팰린드롬수_1259 {
 	}
 	static void isPalin(char[] chr, int len) {
 		Stack<Character> stack = new Stack<Character>();
-		for(int i=0; i<len/2; i++) {
+		for(int i=0; i<len/2; i++)
 			stack.add(chr[i]);
-		}
-		for(int i=(len+1)/2; i<len; i++) {
+		
+		for(int i=(len+1)/2; i<len; i++)
 			if(stack.pop() != chr[i]) {
 				System.out.println("no");
 				return;
 			}
-		}
 		System.out.println("yes");
 		return;
 	}
