@@ -21,7 +21,7 @@ public class 리모컨_1107 {
 			System.out.println(0);
 		else {
 			int min = Math.abs(tNum - 100);
-			int touchCnt = 9999999;
+			int touchCnt = 999999;
 			if(isDirect(targetNumber, brokenNum))
 				if(min > targetNumber.length())
 					min = targetNumber.length();
