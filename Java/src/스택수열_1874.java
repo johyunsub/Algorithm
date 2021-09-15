@@ -30,7 +30,7 @@ public class 스택수열_1874 {
 	}
 
 	private static boolean operateStack(int num, Stack<Integer> stack, int max, StringBuilder sb) {
-		if(max >= num) {		// 스택수열의 수를 포함하면 
+		if(max >= num) {		// 스택에 스택수열의 수를 포함하는 경우 
 			sb.append('-').append("\n");
 			if(num != stack.pop())
 				return false;
